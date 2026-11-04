@@ -1,0 +1,15 @@
+name: env_22481
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - ipykernel
+  - numpy
+  - scikit-learn
+  - scikit-image
+  - scipy
+  - pydicom
+  - matplotlib=3.8.*
+  - nibabel
+  - pandas
