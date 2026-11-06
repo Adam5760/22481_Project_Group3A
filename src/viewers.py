@@ -145,7 +145,6 @@ def viewer(vol: np.ndarray, spacing: tuple, names=("Axial", "Coronal", "Sagittal
     
     # --- Plot function ---
     def plot(z: int, y: int, x: int, window: str):
-
         lo, hi = windows[window]                    # Get window limits
         kw = dict(cmap="gray", vmin=lo, vmax=hi)    # Set colormap and limits
         # Plot the three planes
@@ -169,6 +168,7 @@ def viewer(vol: np.ndarray, spacing: tuple, names=("Axial", "Coronal", "Sagittal
         fig.suptitle(f"{title}  |  value at crosshair: {vol[z, y, x]:.0f} {unit}", x=0.01, ha="left")
         fig.get_layout_engine().set(h_pad=0.15)   # more vertical space between elements (in inches)
         plt.show()
+        plt.close(fig)  # Close the figure to avoid duplicate display in Jupyter
 
     # --- Connect widgets to the plot ---
     out = interactive_output(plot, {"z": z_slider, "y": y_slider, 
