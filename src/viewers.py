@@ -23,6 +23,61 @@ CT_WINDOWS = {
 }
 
 # ---------------------------------------------------------------------------
+# Display helpers
+# ---------------------------------------------------------------------------
+def show_slice(ax, img: np.ndarray, spacing_rc: tuple, origin: str = "upper", **kwargs):
+    """
+    Show a 2D slice with axes in mm.
+
+    Parameters
+    ----------
+    ax : matplotlib Axes
+        Axes to draw in.
+    img : np.ndarray
+        2D image.
+    spacing_rc : tuple
+        (row spacing, column spacing) in mm.
+    origin : str
+        "upper" (row 0 at the top) or "lower" (row 0 at the bottom).
+    **kwargs
+        Passed to imshow (e.g. vmin, vmax).
+
+    Returns
+    -------
+    AxesImage
+        The image, e.g. for a colorbar.
+    """
+    dr, dc = spacing_rc
+    h, w = img.shape
+    extent = [0, w * dc, h * dr, 0] if origin == "upper" else [0, w * dc, 0, h * dr]
+    im = ax.imshow(img, cmap="gray", origin=origin, extent=extent, **kwargs)
+    ax.set_xlabel("mm"); ax.set_ylabel("mm")
+    return im
+
+
+def contour_mm(ax, mask: np.ndarray, spacing_rc: tuple, **kwargs):
+    """
+    Draw the outline of a 2D mask on a slice shown with show_slice.
+
+    Pixel (row, col) is placed at its centre: ((col + 0.5) * dc, (row + 0.5) * dr) mm.
+    
+    Parameters
+    ----------
+    ax : matplotlib Axes
+        Axes to draw in.
+    mask : np.ndarray
+        2D boolean mask.
+    spacing_rc : tuple
+        (row spacing, column spacing) in mm.
+    **kwargs
+        Passed to contour (e.g. colors, linewidths).
+    """
+    dr, dc = spacing_rc
+    X = (np.arange(mask.shape[1]) + 0.5) * dc
+    Y = (np.arange(mask.shape[0]) + 0.5) * dr
+    ax.contour(X, Y, mask.astype(float), levels=[0.5], **kwargs)
+
+# ---------------------------------------------------------------------------
 # Plane names
 # ---------------------------------------------------------------------------
 def plane_name(normal):
@@ -176,5 +231,4 @@ def viewer(vol: np.ndarray, spacing: tuple, names=("Axial", "Coronal", "Sagittal
 
     # --- Layout ---
     display(VBox([out, VBox([window_dd, z_slider, y_slider, x_slider],
-                            layout=Layout(border="1px solid #ccc", width="400px", padding="5px"))],
-                            layout=Layout(padding="5px")))
+                            layout=Layout(border="1px solid #ccc", width="400px", padding="5px"))]))
