@@ -36,9 +36,10 @@ def show_slice(ax, img: np.ndarray, spacing_rc: tuple, origin: str = "upper", **
     img : np.ndarray
         2D image.
     spacing_rc : tuple
-        (row spacing, column spacing) in mm.
+        (row spacing, column spacing) in mm. Used to scale the axes in mm.
     origin : str
         "upper" (row 0 at the top) or "lower" (row 0 at the bottom).
+        Default is "upper".
     **kwargs
         Passed to imshow (e.g. vmin, vmax).
 
@@ -46,6 +47,14 @@ def show_slice(ax, img: np.ndarray, spacing_rc: tuple, origin: str = "upper", **
     -------
     AxesImage
         The image, e.g. for a colorbar.
+    
+    Example
+    -------
+    >>> img = io.imread("images/phantom_slice.png")
+    >>> fig, ax = plt.subplots()
+    >>> show_slice(ax, img, spacing_rc=(0.5, 0.5), origin="upper", vmin=0, vmax=255)
+    >>> ax.set_title("Slice view")
+    >>> plt.show()  
     """
     dr, dc = spacing_rc
     h, w = img.shape
@@ -71,6 +80,16 @@ def contour_mm(ax, mask: np.ndarray, spacing_rc: tuple, **kwargs):
         (row spacing, column spacing) in mm.
     **kwargs
         Passed to contour (e.g. colors, linewidths).
+    
+    Example
+    -------
+    >>> img = io.imread("images/phantom_slice.png")
+    >>> mask = img > 128
+    >>> fig, ax = plt.subplots()
+    >>> show_slice(ax, img, spacing_rc=(0.5, 0.5), origin="upper", vmin=0, vmax=255)
+    >>> contour_mm(ax, mask, spacing_rc=(0.5, 0.5), colors="r", linewidths=1)
+    >>> ax.set_title("Slice view with contour")
+    >>> plt.show()
     """
     dr, dc = spacing_rc
     X = (np.arange(mask.shape[1]) + 0.5) * dc
