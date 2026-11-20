@@ -1,0 +1,55 @@
+Quantity,CT
+Dense object - Volume (mm^3),11166
+Dense object - Volume range (mm^3),10807–11793
+Dense object - Extent z (mm),50.0
+Dense object - Extent y (mm),19.9
+Dense object - Extent x (mm),43.9
+"Dense object - Centre (z, y, x) mm","(np.float64(37.3), np.float64(29.3), np.float64(38.2))"
+Tooth - Tooth material (mm^3),11166
+Tooth - Internal cavities (mm^3),1501
+Tooth - Tooth incl. cavities (mm^3),12667
+Tooth - Cavity fraction (%),11.8
+Tooth - Closing radius (vox / mm),2 / 1.2
+Tooth incl. cavities at 200 HU (mm^3),13209
+Tooth incl. cavities at 300 HU (mm^3),12667
+Tooth incl. cavities at 400 HU (mm^3),12372
+Tooth incl. cavities at 991 HU (mm^3),11120
+Tooth Long axis at 300 HU (mm),53.9
+Tooth Middle axis at 300 HU (mm),35.0
+Tooth Short axis at 300 HU (mm),20.1
+Tooth Long axis at 991 HU (mm),52.3
+Tooth Middle axis at 991 HU (mm),35.8
+Tooth Short axis at 991 HU (mm),19.4
+Air layer under lid (mm),5.4
+"Bubble - Centre (z, y, x) mm","(67.5, 19.9, 23.4)"
+Bubble - Mean diameter (mm),2.2
+"Bubble - Volume, sphere from diameter (mm^3)",5.6
+"Bubble - Volume, voxels below half-way (mm^3)",9.7
+"Bubble - Volume, air fraction (mm^3)",13.8
+Bubble - Equivalent diameter from volume (mm),3.0
+Bubble - Min HU,-958
+Bubble - HU at centre,-958
+Bubble - Distance to tooth surface (mm),4.7
+Bubble - Local filling level (HU),16.0
+Bubble - Air-fraction plateau (mm^3),13.9
+Bubble diameter z (mm),2.1
+Bubble diameter y (mm),2.1
+Bubble diameter x (mm),2.4
+Whole object - median HU,1969.0
+Object core - median HU,2183.0
+Cavities - median HU,-717.0
+Whole object - clipped (%),3.5
+Object core - clipped (%),4.0
+Cavities - clipped (%),0.0
+ROI Filling (far from object) - mean HU,16.8
+ROI Filling (near object) - mean HU,8.8
+ROI Object core - mean HU,2022.7
+ROI Air bubble - mean HU,-772.6
+ROI Air under lid - mean HU,-985.9
+CNR Object core,358.2
+CNR Air bubble,141.0
+CNR Air under lid,179.1
+Edge width In-plane (x) (mm),1.26
+Edge width Along z (mm),1.46
+Noise sigma_N (HU),5.6
+Pulp air core (< LOW_HU) volume (mm^3),965.0

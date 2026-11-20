@@ -1,0 +1,183 @@
+{
+  "dataset": "..\\data\\raw\\CT\\Helical",
+  "spacing_mm (dz, dy, dx)": [
+    0.625,
+    0.5859,
+    0.5859
+  ],
+  "crop (z, y, x)": [
+    [
+      281,
+      497
+    ],
+    [
+      173,
+      262
+    ],
+    [
+      102,
+      240
+    ]
+  ],
+  "FILL_RANGE": [
+    -50,
+    300
+  ],
+  "TABLE_ROW": 340,
+  "DENSE_HU": 300,
+  "LOW_HU": -200,
+  "CLIP_HU": 3071.0,
+  "CORE_EROSION": 3,
+  "CAVITY_SEEDS": [
+    [
+      67,
+      53,
+      31
+    ]
+  ],
+  "MEASURE_LINES": {
+    "Air layer under lid": {
+      "p0": [
+        150,
+        2,
+        60
+      ],
+      "p1": [
+        150,
+        25,
+        60
+      ],
+      "kind": "air"
+    }
+  },
+  "PROFILE (P0, P1)": [
+    [
+      67,
+      53,
+      19
+    ],
+    [
+      67,
+      53,
+      43
+    ]
+  ],
+  "EDGES": {
+    "In-plane (x)": [
+      [
+        39,
+        57,
+        42
+      ],
+      [
+        39,
+        57,
+        60
+      ]
+    ],
+    "Along z": [
+      [
+        26,
+        37,
+        82
+      ],
+      [
+        44,
+        37,
+        82
+      ]
+    ]
+  },
+  "ROIS": {
+    "Filling (far from object)": {
+      "center": [
+        170,
+        45,
+        65
+      ],
+      "half": [
+        5,
+        5,
+        5
+      ]
+    },
+    "Filling (near object)": {
+      "center": [
+        60,
+        50,
+        100
+      ],
+      "half": [
+        5,
+        5,
+        5
+      ]
+    },
+    "Object core": {
+      "center": [
+        57,
+        56,
+        73
+      ],
+      "half": [
+        1,
+        1,
+        1
+      ]
+    },
+    "Air bubble": {
+      "center": [
+        108,
+        34,
+        40
+      ],
+      "half": [
+        1,
+        1,
+        1
+      ]
+    },
+    "Air under lid": {
+      "center": [
+        150,
+        8,
+        60
+      ],
+      "half": [
+        2,
+        1,
+        5
+      ]
+    }
+  },
+  "R_TEST": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "R_CLOSE": 2,
+  "HALF_HU": 991,
+  "R_BY_THRESHOLD": {
+    "200": 2,
+    "300": 2,
+    "400": 2,
+    "991": 3
+  },
+  "BUBBLE_SEED": [
+    108,
+    34,
+    40
+  ],
+  "HALF_LEN": 8,
+  "PLATEAU_RADII_MM": [
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5
+  ]
+}
